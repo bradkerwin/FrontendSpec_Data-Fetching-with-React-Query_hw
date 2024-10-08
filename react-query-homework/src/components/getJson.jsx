@@ -28,18 +28,11 @@ const GetJson = () => {
         return <Alert>{error.message}</Alert>
     }
 
-    const deleteResource = async () => {
-        const response = await axios.delete('https://jsonplaceholder.typicode.com/posts/1', {
-          body: JSON.stringify({
-            title: title,
-            body: body,
-            userId: Date.now(),
-          }),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
-        })
-        return response.data
+    const deleteResource = async (id) => {
+        await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}` 
+        )
+        console.log("Post deleted successfully");
+        return id
       }
 
       const updateResource = async () => {
@@ -48,6 +41,7 @@ const GetJson = () => {
             body: body,
             userId: Date.now(),
           });
+          console.log("Post updated successfully");
     
         return response.data;
       };
