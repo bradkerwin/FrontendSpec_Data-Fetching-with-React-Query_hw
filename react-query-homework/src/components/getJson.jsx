@@ -63,7 +63,7 @@ const GetJson = () => {
                     <Card.Text>{placeholder.body}</Card.Text>
                     <Card.Text>{placeholder.userId}</Card.Text>
                     <Button variant='warning' onClick={updateResource}>Edit Post</Button>
-                    <Button variant='danger' onClick={deleteResource}>Delete Post</Button>
+                    <Button className='ms-2' variant='danger' onClick={deleteResource}>Delete Post</Button>
                 </Card.Body>
             </Card>
         ))}
