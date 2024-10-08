@@ -42,9 +42,19 @@ const GetJson = () => {
         return response.data
       }
 
+      const updateResource = async () => {
+        const response = await axios.put('https://jsonplaceholder.typicode.com/posts', {
+            title: title,
+            body: body,
+            userId: Date.now(),
+          });
+    
+        return response.data;
+      };
+
   return (
     <div>
-        <Button className='success' onClick={refetch}>View Placeholders</Button>
+        <Button className='m-2' variant='primary' onClick={refetch}>View Placeholders</Button>
 
         {placeholders && placeholders.map((placeholder) => (
             <Card key={placeholder.id} style={{ width: '18rem' }}>
@@ -52,6 +62,7 @@ const GetJson = () => {
                     <Card.Title>{placeholder.title}</Card.Title>
                     <Card.Text>{placeholder.body}</Card.Text>
                     <Card.Text>{placeholder.userId}</Card.Text>
+                    <Button variant='warning' onClick={updateResource}>Edit Post</Button>
                     <Button variant='danger' onClick={deleteResource}>Delete Post</Button>
                 </Card.Body>
             </Card>

@@ -42,6 +42,7 @@ const AddResource = () => {
 
   return (
     <>
+    <h3 className='mt-3'>Add New Post:</h3>
       { newResource && (
       <Card key={newResource.id} style={{ width: '18rem' }}>
           <Card.Body>
@@ -61,7 +62,7 @@ const AddResource = () => {
                 <Form.Label><b>Body</b></Form.Label>
                 <Form.Control value={body} type="text" placeholder="Post Body" autoComplete='off' onChange={(event)=> setBody(event.target.value)} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className='ms-3' variant="primary" type="submit">
             Submit
             </Button>
         </Form>

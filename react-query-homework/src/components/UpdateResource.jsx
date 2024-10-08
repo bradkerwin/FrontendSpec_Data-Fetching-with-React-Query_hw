@@ -20,7 +20,7 @@ const UpdateResource = () => {
   };
   
   return (
-    <div>UpdateResource</div>
+    <div></div>
   )
 }
 
